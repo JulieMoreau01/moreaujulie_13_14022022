@@ -1,0 +1,31 @@
+{
+  "eslint.workingDirectories": [
+    "./src"
+  ],
+  "terminal.integrated.tabs.enabled": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  "prettier.requireConfig": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.alwaysShowStatus": true,
+  "eslint.debug": true,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown", "jsx"],
+  "eslint.run": "onSave",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"],
+  "eslint.nodeEnv": ""
+}

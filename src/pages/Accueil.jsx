@@ -4,10 +4,12 @@ import Hero from '../components/Hero'
 
 function Accueil() {
   return (
-    <section>
-      <Hero />
-      <Features />
-    </section>
+    <main>
+      <section>
+        <Hero />
+        <Features />
+      </section>
+    </main>
   )
 }
 

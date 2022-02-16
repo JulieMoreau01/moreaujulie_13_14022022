@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles/features.module.css'
+import '../styles/index.css'
 import chatIcon from '../assets/icon-chat.png'
 import moneyIcon from '../assets/icon-money.png'
 import securityIcon from '../assets/icon-security.png'
@@ -7,7 +8,7 @@ import securityIcon from '../assets/icon-security.png'
 function Features() {
   return (
     <section className={styles.features}>
-      <h2 className={styles.sr_only}>Features</h2>
+      <h2 className="srOnly">Features</h2>
       <div className={styles.feature_item}>
         <img src={chatIcon} alt="Chat Icon" className={styles.feature_icon} />
         <h3 className={styles.feature_item_title}>You are our #1 priority</h3>

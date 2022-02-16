@@ -22,7 +22,7 @@ function SignIn() {
             <input type="checkbox" id="remember-me" />
             <label htmlFor="remember-me">Remember me</label>
           </div>
-          <Link to="/user" class={styles.sign_in_button}>
+          <Link to="/user" className={styles.sign_in_button}>
             Sign In
           </Link>
           <button type="button" className={styles.sign_in_button}>

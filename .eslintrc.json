@@ -13,6 +13,7 @@
   },
   "plugins": ["react"],
   "rules": {
+    "react/jsx-closing-tag-location": ["error", "tag-aligned"],
     "semi": "off",
     "comma-dangle": ["error", "never"],
     "max-len": ["error", { "code": 150 }],

@@ -1,25 +1,12 @@
-import { createStore } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
+import yesClickReducer from '../features/yesClickReducer'
+import formReducer from '../features/formReducer'
 
-// Initialisation des states
-const initialState = {
-  clickOrNot: null
-}
-
-// Action
-export const yesClick = () => ({ type: 'yesClick' })
-
-// le reducer est une fonction
-function reducer(state, action) {
-  // si l'action est de type playPause...
-  if (action.type === 'yesClick') {
-    // ... il faut inverser la propriété playing du state
-    return {
-      ...state,
-      clickOrNot: !state.clickOrNot
-    }
+const store = configureStore({
+  reducer: {
+    yesClick: yesClickReducer,
+    form: formReducer
   }
-  // sinon on retourne le state sans le changer
-  return state
-}
+})
 
-export const store = createStore(reducer, initialState)
+export default store

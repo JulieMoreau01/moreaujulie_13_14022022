@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from '../styles/user.module.css'
 import '../styles/index.css'
-// import getUser from '../service/services'
 
 function User() {
-  useEffect(() => {
-    // getUser()
-  }, [])
   return (
     <main className="main bg-dark">
       <div className={styles.header}>

@@ -1,39 +1,47 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useStore } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { yesClick } from '../features/yesClickReducer'
 import styles from '../styles/signIn.module.css'
 import DisplayTestButton from '../utils/selector'
 import '../styles/index.css'
+import login from '../services/CallApi'
+import fetchOrUpdateData from '../features/formReducer'
 
 function SignIn() {
+  console.log('bidulle1')
   const dispatch = useDispatch()
+  const [signInData, setSignInData] = useState({ email: '', password: '' })
 
-  // useEffect(() => {
-  //   // POST request using fetch inside useEffect React hook
-  //   const requestOptions = {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify({ title: 'React Hooks POST Request Example' })
-  //   }
-  //   fetch('http://localhost:3001/api/v1/user/login', requestOptions)
-  //     .then((response) => response.json())
-  //     .then((data) => setPostId(data.id))
+  const inputForm = (e) => {
+    e.persist()
+    const { name, value } = e.target
+    setSignInData((state) => ({
+      ...state,
+      [name]: value
+    }))
+  }
+  const submitForm = (e) => {
+    e.preventDefault()
+    login(signInData.email, signInData.password)
+  }
 
-  //   // empty dependency array means this effect will only run once (like componentDidMount in classes)
-  // }, [])
+  const store = useStore()
+  useEffect(() => {}, [store])
+
   return (
     <main className="main bg-dark">
       <section className={styles.sign_in_content}>
         <i className="fa fa-user-circle sign-in-icon" />
         <h1>Sign In</h1>
-        <form>
+        <form onSubmit={submitForm}>
           <div className={styles.input_wrapper}>
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" />
+            <input type="email" name="email" id="username" autoComplete="username" required placeholder="Username" value={signInData.email} onChange={inputForm} />
           </div>
           <div className={styles.input_wrapper}>
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
+            <input type="password" name="password" id="password" autoComplete="current-password" required placeholder="Password" value={signInData.password} onChange={inputForm} />
           </div>
           <div className={styles.input_remember}>
             <input type="checkbox" id="remember-me" />
@@ -41,10 +49,10 @@ function SignIn() {
           </div>
 
           <button
-            type="button"
+            type="submit"
             className={styles.sign_in_button}
             onClick={() => {
-              dispatch({ type: 'yesClick' })
+              dispatch(yesClick())
             }}
           >
             Sign In

@@ -1,10 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-function DisplayTestButton() {
-  const testest = useSelector((state) => state.yesClick)
-  console.log('lapin')
-  return <p>{testest ? "j'ai cliqué" : "j'ai décliqué"}</p>
+export function DisplayError() {
+  const errorLoginConst = useSelector((state) => state.errorLogin)
+  return <p>{errorLoginConst ? 'Mot de passe ou Email Incorrect' : "c'est good !!!!!"}</p>
 }
 
-export default DisplayTestButton
+export const isLogSelector = (state) => state.isLog
+
+export const errorLoginSelector = (state) => state.errorLogin
+
+export const dataProfilSelector = (state) => state.dataProfil

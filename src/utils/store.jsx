@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import yesClickReducer from '../features/yesClickReducer'
-import formReducer from '../features/formReducer'
+import isLogReducer from '../features/isLog'
+import errorLoginReducer from '../features/errorLogin'
+import dataProfilReducer from '../features/dataProfil'
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-    yesClick: yesClickReducer,
-    form: formReducer
+    isLog: isLogReducer,
+    errorLogin: errorLoginReducer,
+    dataProfil: dataProfilReducer
   }
 })
-
-export default store

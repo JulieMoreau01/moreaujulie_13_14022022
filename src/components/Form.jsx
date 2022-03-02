@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useStore } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { yesClick } from '../features/yesClickReducer'
+import React, { useState } from 'react'
 import styles from '../styles/signIn.module.css'
-import DisplayTestButton from '../utils/selector'
 import '../styles/index.css'
-import login from '../services/CallApi'
-import fetchOrUpdateData from '../features/formReducer'
+import getToken from '../services/ApiToken'
+import '../styles/index.css'
+import { DisplayError } from '../utils/selector'
 
-function SignIn() {
-  console.log('bidulle1')
-  const dispatch = useDispatch()
+function Form() {
   const [signInData, setSignInData] = useState({ email: '', password: '' })
 
   const inputForm = (e) => {
@@ -21,19 +16,17 @@ function SignIn() {
       [name]: value
     }))
   }
+
   const submitForm = (e) => {
     e.preventDefault()
-    login(signInData.email, signInData.password)
+    getToken(signInData.email, signInData.password)
   }
-
-  const store = useStore()
-  useEffect(() => {}, [store])
-
   return (
     <main className="main bg-dark">
       <section className={styles.sign_in_content}>
         <i className="fa fa-user-circle sign-in-icon" />
         <h1>Sign In</h1>
+
         <form onSubmit={submitForm}>
           <div className={styles.input_wrapper}>
             <label htmlFor="username">Username</label>
@@ -48,21 +41,14 @@ function SignIn() {
             <label htmlFor="remember-me">Remember me</label>
           </div>
 
-          <button
-            type="submit"
-            className={styles.sign_in_button}
-            onClick={() => {
-              dispatch(yesClick())
-            }}
-          >
+          <button type="submit" className={styles.sign_in_button}>
             Sign In
           </button>
-          <DisplayTestButton />
+          <DisplayError />
         </form>
-        <Link to="/user">Sign In</Link>
       </section>
     </main>
   )
 }
 
-export default SignIn
+export default Form

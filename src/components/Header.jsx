@@ -3,10 +3,29 @@ import { Link, useLocation } from 'react-router-dom'
 import styles from '../styles/header.module.css'
 import logo from '../assets/argentBankLogo.png'
 import '../styles/index.css'
+import { useSelector } from 'react-redux'
+import { dataProfilSelector } from '../utils/selector'
 
 function Header() {
-  const location = useLocation()
-  const pageName = location.pathname
+  const lePrenom = 'lapin'
+  const leNom = 'chou'
+  //const lePrenom = useSelector(firstNameSelector)
+  // const leNom = useSelector(lastNameSelector)
+  // console.log(lePrenom)
+  // console.log(leNom)
+  // const location = useLocation()
+  // const pageName = location.pathname
+  const user = useSelector(dataProfilSelector)
+  console.log(user)
+  // if (user.data != null) {
+  //   const firstName = user.data.firstName
+  //   const lastName = user.data.lastName
+  // }
+
+  // const LogOut = (event) => {
+  //   event.preventDefault()
+  //   dispatch(logOut())
+  // }
 
   return (
     <nav className={styles.main_nav}>
@@ -14,11 +33,11 @@ function Header() {
         <img className={styles.main_nav_logo_image} src={logo} alt="Argent Bank Logo" />
         <h1 className="srOnly">Argent Bank</h1>
       </Link>
-      {pageName === '/user' ? (
+      {user.data != null ? (
         <div>
-          <Link to="/sign-in" className={styles.main_nav_item}>
+          <Link to="/Login" className={styles.main_nav_item}>
             <i className="fa fa-user-circle" />
-            Name
+            {user.data.firstName} {user.data.lastName}
           </Link>
           <Link to="/" className={styles.main_nav_item}>
             <i className="fa fa-sign-out" />
@@ -27,7 +46,8 @@ function Header() {
         </div>
       ) : (
         <div>
-          <Link to="/sign-in" className={styles.main_nav_item}>
+          {/* onClick={LogOut} */}
+          <Link to="/Login" className={styles.main_nav_item}>
             <i className="fa fa-user-circle" />
             Sign In
           </Link>

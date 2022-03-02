@@ -11,3 +11,5 @@ export const isLogSelector = (state) => state.isLog
 export const errorLoginSelector = (state) => state.errorLogin
 
 export const dataProfilSelector = (state) => state.dataProfil
+
+export const logOutSelector = (state) => state.logOut

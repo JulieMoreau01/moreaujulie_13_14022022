@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styles from '../styles/signIn.module.css'
 import '../styles/index.css'
 import getToken from '../services/ApiToken'
-import '../styles/index.css'
 import { DisplayError } from '../utils/selector'
 
 function Form() {
@@ -22,32 +21,25 @@ function Form() {
     getToken(signInData.email, signInData.password)
   }
   return (
-    <main className="main bg-dark">
-      <section className={styles.sign_in_content}>
-        <i className="fa fa-user-circle sign-in-icon" />
-        <h1>Sign In</h1>
+    <form onSubmit={submitForm}>
+      <div className={styles.input_wrapper}>
+        <label htmlFor="username">Username</label>
+        <input type="email" name="email" id="username" autoComplete="username" required placeholder="Username" value={signInData.email} onChange={inputForm} />
+      </div>
+      <div className={styles.input_wrapper}>
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password" id="password" autoComplete="current-password" required placeholder="Password" value={signInData.password} onChange={inputForm} />
+      </div>
+      <div className={styles.input_remember}>
+        <input type="checkbox" id="remember-me" />
+        <label htmlFor="remember-me">Remember me</label>
+      </div>
 
-        <form onSubmit={submitForm}>
-          <div className={styles.input_wrapper}>
-            <label htmlFor="username">Username</label>
-            <input type="email" name="email" id="username" autoComplete="username" required placeholder="Username" value={signInData.email} onChange={inputForm} />
-          </div>
-          <div className={styles.input_wrapper}>
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" autoComplete="current-password" required placeholder="Password" value={signInData.password} onChange={inputForm} />
-          </div>
-          <div className={styles.input_remember}>
-            <input type="checkbox" id="remember-me" />
-            <label htmlFor="remember-me">Remember me</label>
-          </div>
-
-          <button type="submit" className={styles.sign_in_button}>
-            Sign In
-          </button>
-          <DisplayError />
-        </form>
-      </section>
-    </main>
+      <button type="submit" className={styles.sign_in_button}>
+        Sign In
+      </button>
+      <DisplayError />
+    </form>
   )
 }
 

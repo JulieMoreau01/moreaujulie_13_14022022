@@ -1,14 +1,8 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useStore } from 'react-redux'
+import React from 'react'
 import styles from '../styles/user.module.css'
-// import Profil from '../services/ApiLogin'
 import '../styles/index.css'
 
-function User() {
-  // const store = useStore()
-  // useEffect(() => {
-  //   Profil()
-  // }, [store])
+function ProfilContent() {
   return (
     <main className="main bg-dark">
       <div className={styles.header}>
@@ -62,4 +56,4 @@ function User() {
   )
 }
 
-export default User
+export default ProfilContent

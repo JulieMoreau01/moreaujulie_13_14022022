@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Login from './pages/Login'
 import Accueil from './pages/Accueil'
-import User from './components/User'
+import Profil from './pages/Profil'
 import Error from './pages/Error'
 
 function App() {
@@ -12,8 +12,9 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
+        {/* {isLog ? <Route path="/profil" element={<Profil />} /> : <Route path="/login" element={<Login />} />} */}
         <Route path="/login" element={<Login />} />
-        <Route path="/user" element={<User />} />
+        <Route path="/profil" element={<Profil />} />
         <Route path="/" element={<Accueil />} />
         <Route path="*" element={<Error />} />
       </Routes>

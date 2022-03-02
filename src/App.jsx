@@ -12,7 +12,6 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        {/* {isLog ? <Route path="/profil" element={<Profil />} /> : <Route path="/login" element={<Login />} />} */}
         <Route path="/login" element={<Login />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/" element={<Accueil />} />

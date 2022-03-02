@@ -1,6 +1,7 @@
-import { profil } from '../services/ApiProfil'
+import { getProfil } from '../services/ApiProfil'
 import { store } from '../utils/store'
-import { isLogAction } from '../features/isLog'
+//import { isLogAction } from '../features/isLog'
+
 import { errorLoginAction } from '../features/errorLogin'
 
 export default async function getToken(email, password) {
@@ -15,8 +16,8 @@ export default async function getToken(email, password) {
     .then((response) => {
       const { token } = response.body
       localStorage.setItem('token', token)
-      store.dispatch(isLogAction())
-      profil(store)
+      //store.dispatch(isLogAction())
+      getProfil(store)
     })
     .catch((error) => {
       console.log('erreur ApiToken')

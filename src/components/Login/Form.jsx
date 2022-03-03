@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import styles from '../styles/signIn.module.css'
-import '../styles/index.css'
-import getToken from '../services/ApiToken'
-import { DisplayError } from '../utils/selector'
+import styles from '../../styles/signIn.module.css'
+import '../../styles/index.css'
+import getToken from '../../services/GetToken'
+import { DisplayError } from '../../utils/selector'
 
 function Form() {
   const [signInData, setSignInData] = useState({ email: '', password: '' })

@@ -2,7 +2,7 @@ import React from 'react'
 import { Navigate } from 'react-router'
 import { useSelector } from 'react-redux'
 import { isLogSelector } from '../utils/selector'
-import Form from '../components/Form'
+import Form from '../components/Login/Form'
 import styles from '../styles/signIn.module.css'
 import '../styles/index.css'
 

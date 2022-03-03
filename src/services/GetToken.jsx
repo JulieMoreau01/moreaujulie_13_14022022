@@ -1,7 +1,5 @@
-import { getProfil } from '../services/ApiProfil'
+import { getProfil } from './GetProfil'
 import { store } from '../utils/store'
-//import { isLogAction } from '../features/isLog'
-
 import { errorLoginAction } from '../features/errorLogin'
 
 export default async function getToken(email, password) {
@@ -16,7 +14,6 @@ export default async function getToken(email, password) {
     .then((response) => {
       const { token } = response.body
       localStorage.setItem('token', token)
-      //store.dispatch(isLogAction())
       getProfil(store)
     })
     .catch((error) => {

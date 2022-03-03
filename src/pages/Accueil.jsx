@@ -1,6 +1,6 @@
 import React from 'react'
-import Features from '../components/Features'
-import Hero from '../components/Hero'
+import Features from '../components/Accueil/Features'
+import Hero from '../components/Accueil/Hero'
 
 function Accueil() {
   return (

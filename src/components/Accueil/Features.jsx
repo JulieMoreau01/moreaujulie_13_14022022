@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from '../styles/features.module.css'
-import '../styles/index.css'
-import chatIcon from '../assets/icon-chat.png'
-import moneyIcon from '../assets/icon-money.png'
-import securityIcon from '../assets/icon-security.png'
+import styles from '../../styles/features.module.css'
+import '../../styles/index.css'
+import chatIcon from '../../assets/icon-chat.png'
+import moneyIcon from '../../assets/icon-money.png'
+import securityIcon from '../../assets/icon-security.png'
 
 function Features() {
   return (

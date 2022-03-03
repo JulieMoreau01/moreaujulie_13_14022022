@@ -25,7 +25,7 @@ function Header() {
       </Link>
       {user.data != null && isLog === true ? (
         <div>
-          <Link to="/Login" className={styles.main_nav_item}>
+          <Link to="/Profil" className={styles.main_nav_item}>
             <i className="fa fa-user-circle" />
             {user.data.firstName} {user.data.lastName}
           </Link>

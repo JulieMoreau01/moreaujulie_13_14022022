@@ -14,7 +14,11 @@ function Profil() {
   if (isLogStatus === false) {
     return <Navigate to="/" />
   } else {
-    return <ProfilContent />
+    return (
+      <main className="main bg-dark">
+        <ProfilContent />
+      </main>
+    )
   }
 }
 

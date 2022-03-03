@@ -41,7 +41,7 @@ function ProfilContent() {
     putProfil(changeName.firstName, changeName.lastName)
   }
   return (
-    <main className="main bg-dark">
+    <React.Fragment>
       <div className={styles.header}>
         <h1>
           Welcome back
@@ -71,7 +71,7 @@ function ProfilContent() {
       <Account title="(x8349)" amount="$2,082.79" description="Available Balance" />
       <Account title="(x6712)" amount="$10,928.42" description="Available Balance" />
       <Account title="(x8349)" amount="$184.30" description="Current Balanc" />
-    </main>
+    </React.Fragment>
   )
 }
 

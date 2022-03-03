@@ -1,11 +1,15 @@
 import React from 'react'
 import { Navigate } from 'react-router'
 import { useSelector } from 'react-redux'
-import { isLogSelector } from '../utils/selector'
+import { isLogSelector } from '../redux/selector'
 import Form from '../components/Login/Form'
 import styles from '../styles/signIn.module.css'
 import '../styles/index.css'
 
+/**
+ * LOGIN PAGE
+ * @returns {JSX}
+ */
 function Login() {
   const isLog = useSelector(isLogSelector)
   if (isLog) {

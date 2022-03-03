@@ -1,7 +1,13 @@
 import { getProfil } from './GetProfil'
-import { store } from '../utils/store'
-import { errorLoginAction } from '../features/errorLogin'
+import { store } from '../redux/store'
+import { errorLoginAction } from '../redux/features/errorLogin'
 
+/**
+ * Get Token
+ * @param {string} email
+ * @param {string} password
+ * @returns {token} // in localStorage
+ */
 export default async function getToken(email, password) {
   const requestOptions = {
     method: 'POST',
@@ -16,8 +22,8 @@ export default async function getToken(email, password) {
       localStorage.setItem('token', token)
       getProfil(store)
     })
-    .catch((error) => {
-      console.log('erreur ApiToken')
+    .catch(() => {
+      console.log('Erreur ApiToken')
       store.dispatch(errorLoginAction())
     })
 }

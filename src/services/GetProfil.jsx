@@ -1,6 +1,10 @@
-import { dataProfilResolved } from '../features/dataProfil'
-import { isLogAction } from '../features/isLog'
+import { dataProfilResolved } from '../redux/features/dataProfil'
+import { isLogAction } from '../redux/features/isLog'
 
+/**
+ * Get Profil Information
+ * @returns {firstName, lastName}
+ */
 export async function getProfil(store) {
   const requestOptions = {
     method: 'POST',
@@ -9,15 +13,12 @@ export async function getProfil(store) {
   return fetch('http://localhost:3001/api/v1/user/profile', requestOptions)
     .then((res) => res.json())
     .then((response) => {
-      const { id, firstName, lastName } = response.body
-      console.log(id)
-      console.log(firstName)
-      console.log(lastName)
-      store.dispatch(dataProfilResolved({ firstName: response.body.firstName, lastName: response.body.lastName }))
-      store.dispatch(isLogAction())
       console.log(response)
+      const { firstName, lastName } = response.body
+      store.dispatch(dataProfilResolved({ firstName: firstName, lastName: lastName }))
+      store.dispatch(isLogAction())
     })
-    .catch((error) => {
-      console.log('erreur dans ApiProfil')
+    .catch(() => {
+      console.log('Erreur dans getProfil')
     })
 }

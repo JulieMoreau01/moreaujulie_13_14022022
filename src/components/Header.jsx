@@ -4,14 +4,19 @@ import styles from '../styles/header.module.css'
 import logo from '../assets/argentBankLogo.png'
 import '../styles/index.css'
 import { useSelector } from 'react-redux'
-import { dataProfilSelector, isLogSelector } from '../utils/selector'
-import { store } from '../utils/store'
-import { isLogAction } from '../features/isLog'
+import { dataProfilSelector, isLogSelector } from '../redux/selector'
+import { store } from '../redux/store'
+import { isLogAction } from '../redux/features/isLog'
 
+/**
+ * HEADER COMPONENT
+ * @returns {JSX}
+ */
 function Header() {
+  // Get User FirstName and LastName
   const user = useSelector(dataProfilSelector)
+  // GET LOG OR NOT
   const isLog = useSelector(isLogSelector)
-  console.log(user.data)
 
   function logOut() {
     store.dispatch(isLogAction())

@@ -5,6 +5,10 @@ import chatIcon from '../../assets/icon-chat.png'
 import moneyIcon from '../../assets/icon-money.png'
 import securityIcon from '../../assets/icon-security.png'
 
+/**
+ * FEATURES COMPONENT FOR INDEX PAGE
+ * @returns {JSX}
+ */
 function Features() {
   return (
     <section className={styles.features}>

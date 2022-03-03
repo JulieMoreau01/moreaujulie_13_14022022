@@ -1,6 +1,13 @@
 import React from 'react'
 import styles from '../../styles/profil.module.css'
 
+/**
+ * ACCOUNT COMPONENT FOR PROFILCONTENT COMPONENT FOR PROFIL PAGE
+ * @param {string} props.title
+ * @param {string} props.amount
+ * @param {string} props.description
+ * @returns {JSX}
+ */
 function Account(props) {
   const title = props.title
   const amount = props.amount

@@ -1,6 +1,10 @@
 import React from 'react'
 import styles from '../../styles/hero.module.css'
 
+/**
+ * HERO COMPONENT FOR INDEX PAGE
+ * @returns {JSX}
+ */
 function Hero() {
   return (
     <div className={styles.hero}>

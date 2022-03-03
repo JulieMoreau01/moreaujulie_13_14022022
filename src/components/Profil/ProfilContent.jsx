@@ -2,14 +2,20 @@ import React, { useState } from 'react'
 import styles from '../../styles/profil.module.css'
 import '../../styles/index.css'
 import { useSelector } from 'react-redux'
-import { dataProfilSelector } from '../../utils/selector'
+import { dataProfilSelector } from '../../redux/selector'
 import Account from './Account'
 import putProfil from '../../services/PutProfil'
 
+/**
+ * PROFIL CONTENT COMPONENT
+ * @returns {JSX}
+ */
 function ProfilContent() {
+  // Get User FirstName and LastName
   const user = useSelector(dataProfilSelector)
-  console.log(user)
+  // State for Display FORM for change Name
   const [displayFormNames, setDisplayFormNames] = useState(false)
+  // State for New FirstName and LastName
   const [changeName, setChangeName] = useState({ firstName: '', lastName: '' })
 
   function OpenFormNames() {
@@ -19,6 +25,7 @@ function ProfilContent() {
     setDisplayFormNames(false)
   }
 
+  // Get new FirstName and LastName from Input
   const inputForm = (e) => {
     e.persist()
     const { name, value } = e.target
@@ -28,9 +35,9 @@ function ProfilContent() {
     }))
   }
 
+  // Send the new FirstName and Last to the API
   const submitForm = (e) => {
     e.preventDefault()
-    console.log(changeName.firstName)
     putProfil(changeName.firstName, changeName.lastName)
   }
   return (

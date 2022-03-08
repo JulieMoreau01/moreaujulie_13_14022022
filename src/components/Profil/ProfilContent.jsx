@@ -70,7 +70,7 @@ function ProfilContent() {
       <h2 className={styles.srOnly}>Accounts</h2>
       <Account title="(x8349)" amount="$2,082.79" description="Available Balance" />
       <Account title="(x6712)" amount="$10,928.42" description="Available Balance" />
-      <Account title="(x8349)" amount="$184.30" description="Current Balanc" />
+      <Account title="(x8349)" amount="$184.30" description="Current Balance" />
     </React.Fragment>
   )
 }

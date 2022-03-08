@@ -21,6 +21,7 @@ export default async function getToken(email, password) {
       const { token } = response.body
       localStorage.setItem('token', token)
       getProfil(store)
+      store.dispatch(errorLoginAction())
     })
     .catch(() => {
       console.log('Erreur ApiToken')

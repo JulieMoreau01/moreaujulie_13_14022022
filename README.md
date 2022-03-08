@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# SPORTSEE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+OPENCLASSROOMS Project 13 : Utilisez une API pour un compte utilisateur bancaire avec React
 
-## Available Scripts
+![ArgentBank](https://raw.githubusercontent.com/JulieMoreau01/moreaujulie_13_14022022/main/src/assets/readme.png)
 
-In the project directory, you can run:
+# DEPENDENCIES
 
-### `npm start`
+- Yarn [v1.22.5](https://yarnpkg.com/).
+- React [v17.0.2 ](https://fr.reactjs.org/).
+- React Router [v6.2.1](https://reactrouter.com/).
+  `yarn add react-router-dom`
+- React redux [v7.2.6] (https://redux.js.org/)
+- Redux Toolkit [1.7.2] (https://redux-toolkit.js.org/)
+- Text editor: [Visual Studio Code](https://code.visualstudio.com/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project was bootstrapped with [Creat React App](https://create-react-app.dev/).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# API Front-end Dashboard
 
-### `npm test`
+This repo contains all the source code to run the micro API for the sports analytics dashboard SportSee.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[API INSTALLATION](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API).
 
-### `npm run build`
+The API was bootstrapped without Docker.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Fork the repository
+- Clone it on your computer.
+- The `yarn` command will allow you to install the dependencies.
+- The `yarn dev` command will allow you to run the micro API.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Endpoints
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Login : http://localhost:3001/user/login
 
-### `npm run eject`
+Signup : http://localhost:3001/user/signup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Profile : http://localhost:3001/user/profile
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Transaction : http://localhost:3001/user/profile/transaction
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# STYLE
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+CSS : [CSS Modules Stylesheet](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) : this feature is available with react-scripts@2.0.0 and higher.
 
-## Learn More
+MOCK UP : [Figma](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API/tree/master/designs/wireframes)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# INSTALLATION
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Create a new file folder
+  `git init`
 
-### Code Splitting
+- Clone The repository
+  `git clone https://github.com/JulieMoreau01/moreaujulie_13_14022022.git`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- The `yarn` command will allow you to install the dependencies.
 
-### Analyzing the Bundle Size
+- Lunch the projetct
+  `yarn start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The project was develop with PRETTIER
+  `yarn add -D prettier`

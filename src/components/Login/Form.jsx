@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from '../../styles/signIn.module.css'
+import styles from '../../styles/login.module.css'
 import '../../styles/index.css'
 import getToken from '../../services/GetToken'
 import { DisplayError } from '../../redux/selector'
@@ -9,7 +9,7 @@ import { DisplayError } from '../../redux/selector'
  * @returns {JSX}
  */
 function Form() {
-  // State For email and password information from input
+  // Local State For email and password information from input
   const [signInData, setSignInData] = useState({ email: '', password: '' })
 
   // Get email and Password from input

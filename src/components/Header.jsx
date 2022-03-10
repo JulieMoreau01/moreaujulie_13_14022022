@@ -13,9 +13,9 @@ import { isLogAction } from '../redux/features/isLog'
  * @returns {JSX}
  */
 function Header() {
-  // Get User FirstName and LastName
+  // Get User FirstName and LastName From redux
   const user = useSelector(dataProfilSelector)
-  // GET LOG OR NOT
+  // GET LOG OR NOT from redux
   const isLog = useSelector(isLogSelector)
 
   function logOut() {

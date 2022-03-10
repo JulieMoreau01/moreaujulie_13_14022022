@@ -1,4 +1,4 @@
-import { dataProfilResolved } from '../redux/features/dataProfil'
+import { dataProfilAction } from '../redux/features/dataProfil'
 import { store } from '../redux/store'
 
 /**
@@ -18,7 +18,7 @@ export default async function putProfil(firstName, lastName) {
     .then((response) => {
       console.log(response)
       const { firstName, lastName } = response.body
-      store.dispatch(dataProfilResolved({ firstName: firstName, lastName: lastName }))
+      store.dispatch(dataProfilAction({ firstName: firstName, lastName: lastName }))
     })
     .catch(() => {
       console.log('Erreur dans PutProfil')

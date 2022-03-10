@@ -10,8 +10,9 @@ import { Navigate } from 'react-router'
  * @returns {JSX}
  */
 function Profil() {
-  const isLogStatus = useSelector(isLogSelector)
-  if (isLogStatus === false) {
+  // GET LOG OR NOT from redux
+  const isLog = useSelector(isLogSelector)
+  if (isLog === false) {
     return <Navigate to="/" />
   } else {
     return (

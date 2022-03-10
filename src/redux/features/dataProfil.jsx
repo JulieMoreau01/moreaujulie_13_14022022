@@ -5,11 +5,14 @@ const initialState = {
   data: null
 }
 
-export const dataProfilResolved = createAction('dataProfilResolved')
+// Action
+export const dataProfilAction = createAction('dataProfilResolved')
 
+// Reducer
 export default createReducer(initialState, (builder) =>
-  builder.addCase(dataProfilResolved, (draft, action) => {
+  builder.addCase(dataProfilAction, (draft, action) => {
     draft.data = action.payload
     return
   })
 )
+

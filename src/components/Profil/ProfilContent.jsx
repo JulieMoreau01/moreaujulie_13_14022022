@@ -11,12 +11,12 @@ import putProfil from '../../services/PutProfil'
  * @returns {JSX}
  */
 function ProfilContent() {
-  // Get User FirstName and LastName
+  // Get User FirstName and LastName From Redux
   const user = useSelector(dataProfilSelector)
-  // State for Display FORM for change Name
+
+
+  // Local State for Open or close Form
   const [displayFormNames, setDisplayFormNames] = useState(false)
-  // State for New FirstName and LastName
-  const [changeName, setChangeName] = useState({ firstName: '', lastName: '' })
 
   function OpenFormNames() {
     setDisplayFormNames(true)
@@ -24,6 +24,9 @@ function ProfilContent() {
   function CloseFormNames() {
     setDisplayFormNames(false)
   }
+
+  // Local State for New FirstName and LastName from Input
+  const [changeName, setChangeName] = useState({ firstName: '', lastName: '' })
 
   // Get new FirstName and LastName from Input
   const inputForm = (e) => {
@@ -40,6 +43,7 @@ function ProfilContent() {
     e.preventDefault()
     putProfil(changeName.firstName, changeName.lastName)
   }
+
   return (
     <React.Fragment>
       <div className={styles.header}>

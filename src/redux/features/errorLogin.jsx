@@ -10,7 +10,7 @@ export const errorLoginAction = createAction('errorLoginAction')
 
 // Reducer
 export default createReducer(initialState, (builder) => {
-  builder.addCase(errorLoginAction, (draft, action) => {
-    draft.data = action.payload
+  builder.addCase(errorLoginAction, (state, action) => {
+    state.data = action.payload
   })
 })

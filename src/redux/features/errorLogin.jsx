@@ -12,8 +12,5 @@ export const errorLoginAction = createAction('errorLoginAction')
 export default createReducer(initialState, (builder) => {
   builder.addCase(errorLoginAction, (draft, action) => {
     draft.data = action.payload
-    return
   })
 })
-
-

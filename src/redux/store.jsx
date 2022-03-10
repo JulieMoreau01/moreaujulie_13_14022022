@@ -3,7 +3,7 @@ import isLogReducer from './features/isLog'
 import errorLoginReducer from './features/errorLogin'
 import dataProfilReducer from './features/dataProfil'
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     isLog: isLogReducer,
     errorLogin: errorLoginReducer,
@@ -11,3 +11,4 @@ export const store = configureStore({
   }
 })
 
+export default store

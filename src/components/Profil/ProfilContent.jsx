@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import styles from '../../styles/profil.module.css'
 import '../../styles/index.css'
-import { useSelector } from 'react-redux'
 import { dataProfilSelector } from '../../redux/selector'
 import Account from './Account'
 import putProfil from '../../services/PutProfil'
@@ -13,7 +13,8 @@ import putProfil from '../../services/PutProfil'
 function ProfilContent() {
   // Get User FirstName and LastName From Redux
   const user = useSelector(dataProfilSelector)
-
+  const space = ' '
+  const exclamation = '!'
 
   // Local State for Open or close Form
   const [displayFormNames, setDisplayFormNames] = useState(false)
@@ -45,12 +46,15 @@ function ProfilContent() {
   }
 
   return (
-    <React.Fragment>
+    <>
       <div className={styles.header}>
         <h1>
           Welcome back
           <br />
-          {user.data.firstName} {user.data.lastName} !
+          {user.data.firstName}
+          {space}
+          {user.data.lastName}
+          {exclamation}
         </h1>
         <button className={styles.edit_button} type="button" onClick={OpenFormNames}>
           Edit Name
@@ -65,7 +69,9 @@ function ProfilContent() {
               <input type="text" id="lastName" name="lastName" required placeholder={user.data.lastName} value={changeName.lastName} onChange={inputForm} />
             </p>
             <button type="submit">Save</button>
-            <button onClick={CloseFormNames}>Cancel</button>
+            <button onClick={CloseFormNames} type="button">
+              Cancel
+            </button>
           </form>
         ) : (
           ''
@@ -75,7 +81,7 @@ function ProfilContent() {
       <Account title="(x8349)" amount="$2,082.79" description="Available Balance" />
       <Account title="(x6712)" amount="$10,928.42" description="Available Balance" />
       <Account title="(x8349)" amount="$184.30" description="Current Balance" />
-    </React.Fragment>
+    </>
   )
 }
 

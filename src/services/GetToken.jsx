@@ -1,5 +1,5 @@
-import { getProfil } from './GetProfil'
-import { store } from '../redux/store'
+import getProfil from './GetProfil'
+import store from '../redux/store'
 import { errorLoginAction } from '../redux/features/errorLogin'
 
 /**
@@ -12,7 +12,7 @@ export default async function getToken(email, password) {
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password })
+    body: JSON.stringify({ email: email, password: password })
   }
   return fetch('http://localhost:3001/api/v1/user/login', requestOptions)
     .then((res) => res.json())
@@ -22,7 +22,7 @@ export default async function getToken(email, password) {
       getProfil()
       store.dispatch(errorLoginAction(false))
     })
-    .catch((error) => {
+    .catch(() => {
       console.log('Erreur ApiToken')
       store.dispatch(errorLoginAction(true))
     })

@@ -9,13 +9,14 @@ import styles from '../../styles/profil.module.css'
  * @returns {JSX}
  */
 function Account(props) {
-  const title = props.title
-  const amount = props.amount
-  const description = props.description
+  const { title, amount, description } = props
   return (
     <section className={styles.account}>
       <div className={styles.account_content_wrapper}>
-        <h3 className={styles.account_title}>Argent Bank Checking {title}</h3>
+        <h3 className={styles.account_title}>
+          {'Argent Bank Checking '}
+          {title}
+        </h3>
         <p className={styles.account_amount}>{amount}</p>
         <p className={styles.account_amount_description}>{description}</p>
       </div>

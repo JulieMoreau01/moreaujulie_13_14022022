@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import styles from '../styles/header.module.css'
 import logo from '../assets/argentBankLogo.png'
 import '../styles/index.css'
-import { useSelector } from 'react-redux'
 import { dataProfilSelector, isLogSelector } from '../redux/selector'
-import { store } from '../redux/store'
+import store from '../redux/store'
 import { isLogAction } from '../redux/features/isLog'
 
 /**
@@ -17,10 +17,7 @@ function Header() {
   const user = useSelector(dataProfilSelector)
   // GET LOG OR NOT from redux
   const isLog = useSelector(isLogSelector)
-
-  function logOut() {
-    store.dispatch(isLogAction())
-  }
+  const space = ' '
 
   return (
     <nav className={styles.main_nav}>
@@ -32,9 +29,11 @@ function Header() {
         <div>
           <Link to="/Profil" className={styles.main_nav_item}>
             <i className="fa fa-user-circle" />
-            {user.data.firstName} {user.data.lastName}
+            {user.data.firstName}
+            {space}
+            {user.data.lastName}
           </Link>
-          <Link to="/" className={styles.main_nav_item} onClick={logOut}>
+          <Link to="/" className={styles.main_nav_item} onClick={() => store.dispatch(isLogAction())}>
             <i className="fa fa-sign-out" />
             Sign Out
           </Link>

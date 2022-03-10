@@ -6,7 +6,7 @@ import styles from '../../styles/error.module.css'
  * @returns {JSX}
  */
 function ErrorMessage() {
-  return <p className={styles.errorMessage}> 404 Page d'erreur</p>
+  return <p className={styles.errorMessage}>404 Error</p>
 }
 
 export default ErrorMessage

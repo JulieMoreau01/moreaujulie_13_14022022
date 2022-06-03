@@ -20,7 +20,7 @@ This project was bootstrapped with [Creat React App](https://create-react-app.de
 
 # API Front-end Dashboard
 
-This repo contains all the source code to run the micro API for the sports analytics dashboard SportSee.
+This repo contains all the source code to run the micro API
 
 [API INSTALLATION](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API).
 
